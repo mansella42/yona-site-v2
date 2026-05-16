@@ -4,8 +4,8 @@ import { Target, Users, Leaf, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
-  title: "About Us | WildTrack",
-  description: "The story behind WildTrack - built by a hunter and conservationist who wanted better tools for land stewardship.",
+  title: "About Us | Yona",
+  description: "The story behind Yona - built by a hunter and conservationist who wanted better tools for land stewardship.",
 }
 
 export default function AboutPage() {
@@ -25,7 +25,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <div className="mx-auto max-w-4xl">
-              <p className="text-sm font-medium text-primary mb-2">The Story Behind WildTrack</p>
+              <p className="text-sm font-medium text-primary mb-2">The Story Behind Yona</p>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
                 Built by a Hunter, for Those Who Steward the Land
               </h1>
@@ -59,7 +59,7 @@ export default function AboutPage() {
       {/* Why I Built This */}
       <section className="py-10 bg-secondary/30">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Why I Built WildTrack</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Why I Built Yona</h2>
           <div className="grid gap-6">
             <div className="flex gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -107,7 +107,7 @@ export default function AboutPage() {
       {/* How I Use It */}
       <section className="py-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">How I Use WildTrack</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">How I Use Yona</h2>
           <div className="bg-card border border-border rounded-xl p-6 space-y-4">
             <p className="text-muted-foreground leading-relaxed">
               Every time I&apos;m on the property, I log what I see — deer activity, turkey scratching,
@@ -131,12 +131,12 @@ export default function AboutPage() {
       {/* Goals */}
       <section className="py-10 bg-primary text-primary-foreground">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-6">My Goals for WildTrack</h2>
+          <h2 className="text-2xl font-bold mb-6">My Goals for Yona</h2>
           <div className="space-y-4">
             {[
               { num: "1", title: "Keep it simple.", body: "This should be a tool that anyone can pick up and use, whether you're tech-savvy or not. No bloat, no unnecessary complexity." },
-              { num: "2", title: "Build a community.", body: "I want WildTrack users to learn from each other — sharing what works on their land, their management strategies, their successes and failures." },
-              { num: "3", title: "Support conservation.", body: "A portion of every subscription goes directly to habitat restoration and conservation organizations. Using WildTrack means contributing to the land beyond your own property lines." },
+              { num: "2", title: "Build a community.", body: "I want Yona users to learn from each other — sharing what works on their land, their management strategies, their successes and failures." },
+              { num: "3", title: "Support conservation.", body: "A portion of every subscription goes directly to habitat restoration and conservation organizations. Using Yona means contributing to the land beyond your own property lines." },
               { num: "4", title: "Listen and improve.", body: "This is built by someone who uses it. I read every piece of feedback, and the features we add come from real users with real needs." },
             ].map((goal) => (
               <div key={goal.num} className="flex items-start gap-3">

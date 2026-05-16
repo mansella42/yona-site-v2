@@ -89,7 +89,7 @@ export default function ConservationPage() {
               10% of Every Subscription Goes to Conservation
             </h1>
             <p className="mt-4 text-lg text-primary-foreground/80 leading-relaxed">
-              When you subscribe to WildTrack, you&apos;re not just getting a land management tool — you&apos;re
+              When you subscribe to Yona, you&apos;re not just getting a land management tool — you&apos;re
               directly funding conservation projects that protect wild and sustainably managed lands
               across the Southern US.
             </p>
@@ -195,7 +195,7 @@ export default function ConservationPage() {
                     <div className="relative h-[520px]">
                       <Image
                         src="/images/app-conservation-choice.jpg"
-                        alt="WildTrack app showing conservation project selection — replace with real screenshot"
+                        alt="Yona app showing conservation project selection — replace with real screenshot"
                         fill
                         className="object-cover"
                       />
@@ -247,7 +247,7 @@ export default function ConservationPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Why We Give Back</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            WildTrack exists because we believe in responsible land stewardship. The hunters, farmers,
+            Yona exists because we believe in responsible land stewardship. The hunters, farmers,
             foresters, and conservationists who use our platform are already doing the hard work of
             caring for the land. We think it&apos;s only right that we support the organizations
             working alongside them.
@@ -264,7 +264,7 @@ export default function ConservationPage() {
       <section className="py-10 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-foreground">Ready to Make a Difference?</h2>
-          <p className="mt-2 text-muted-foreground">Join WildTrack and put your subscription to work for conservation.</p>
+          <p className="mt-2 text-muted-foreground">Join Yona and put your subscription to work for conservation.</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">
               <Link href="/#pricing">View Pricing</Link>
