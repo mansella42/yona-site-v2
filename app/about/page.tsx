@@ -8,26 +8,30 @@ export const metadata = {
   description: "The story behind Yona - built by a hunter and conservationist who wanted better tools for land stewardship.",
 }
 
+/** Portrait hero crop: raise the % to pan down (face moves up in the frame). Try 22 → 30 → 38. */
+const ABOUT_HERO_IMAGE_POSITION = "center 30%"
+
 export default function AboutPage() {
   return (
     <main className="bg-background pt-16">
 
       {/* Hero Section */}
       <section className="relative">
-        <div className="relative h-[50vh] min-h-[380px]">
+        <div className="relative h-[50vh] min-h-[380px] md:min-h-[420px]">
           <Image
-            src="/images/founder-hero.jpg"
-            alt="Founder in the field - replace with your photo"
+            src="/images/tahlequah_cornstalkShoot_jan26.jpg"
+            alt="Founder in the field"
             fill
             className="object-cover"
+            style={{ objectPosition: ABOUT_HERO_IMAGE_POSITION }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background from-25% via-background/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <div className="mx-auto max-w-4xl">
-              <p className="text-sm font-medium text-primary mb-2">The Story Behind Yona</p>
+              <p className="text-sm font-medium text-primary mb-2">The Yona story</p>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-                Built by a Hunter, for Those Who Steward the Land
+                Built by a southern hunter, for those who care deeply about the land
               </h1>
             </div>
           </div>
@@ -39,19 +43,35 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-foreground mb-4">My Story</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            I grew up in the rural South, where weekends meant helping my grandfather check on the family land,
-            scouting for deer sign, and learning which oaks dropped acorns first. Those days shaped who I am —
-            a hunter, a forager, and someone who believes deeply in responsible land stewardship.
+            I grew up in the rural Alabama, where Friday lunchtime meant checking out early from school to make the
+            drive down to Lee County, Alabama to head to the hunting club.
+            It meant scouting for deer sign, and learning which oaks dropped acorns first.
+            It also meant community and friendship and common ground in a chaotic world.
+            The southern hunting club community is critical to our way of life and to preserve the backwoods, hollers, and well managed farmland of the south. 
+            Those days shaped who I am, first and foremost a conservationists, a hunter, a forager, and someone who believes deeply in responsible land stewardship by those who care most about it.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            For years, I managed our family property the old-fashioned way: handwritten notes, mental maps,
-            and spreadsheets that never quite captured what I needed. When I joined a hunting club with
-            fifteen other members, the coordination became nearly impossible. Who saw what and where?
-            Which food plots needed attention? When was the last time we worked on that timber stand?
+            I was fortunate enough to get a small bit of land and I've managed it the old-fashioned way: handwritten notes, mental maps,
+            and spreadsheets that never quite captured what I needed. I've also been in hunting clubs my whole life with
+            anywhere from 6 to 60 members where coordination becomes nearly impossible. Who saw what and where?
+            What year did Johnny get that big 10? Was it on Old Clover plot or Dan's Field?
+            Which food plots needed attention? How much did we spend on planting last year? Which seed is best for our soil type?
+            When was the last time we worked on that old timber stand?
           </p>
           <p className="text-muted-foreground leading-relaxed">
             I searched for a tool that could help — something that understood the rhythms of land management,
             not just generic task tracking. When I couldn&apos;t find one, I decided to build it myself.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mt-4">
+              As far as the name "Yona" goes, it's the Cherokee word for bear.
+              When I was thinking about building this app a few years ago, we had a black bear visiting our property
+              which is rare for our part of Alabama. At the time as it happens, I was learning some Cherokee and I thought it represented that "apex" and sign 
+              of a healthy land to see them in this area again, and the name Yona was born or in Cherokee, <strong>ᏲᎾ</strong>.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mt-4">
+            To honor that moment and naming, I used the photo above for when I got a beautiful Cherokee made bow from Jesse Grayson.
+            He isn't pictured in this one, but he and others like Richard Fields in Oklahoma make wonderful bows.
+            If you're into that, you should consider contacting them and they'll make a bow for you.
           </p>
         </div>
       </section>
@@ -66,7 +86,7 @@ export default function AboutPage() {
                 <Target className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">To Solve My Own Problem</h3>
+                <h3 className="font-semibold text-foreground mb-1">To solve my own problem</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   I needed a single place to track observations, map our stands and food plots, coordinate with
                   club members, and document our land improvements over time. Existing tools were either too
@@ -79,11 +99,13 @@ export default function AboutPage() {
                 <Users className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">To Help Clubs Work Together</h3>
+                <h3 className="font-semibold text-foreground mb-1">To help clubs work together</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   A hunting club is a community, and communities need good communication. I wanted to make it
                   easy for members to share sightings, coordinate schedules, and work toward common goals
                   without endless group texts and lost emails.
+                  My favorite part is the "tag out" or "sign out" feature depending on who you're talking to.
+                  Where club members can see at a quick glance who is in the woods, and logging a hunt or harvest after the sit is essentially automatic.
                 </p>
               </div>
             </div>
@@ -92,7 +114,7 @@ export default function AboutPage() {
                 <Leaf className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">To Promote Better Stewardship</h3>
+                <h3 className="font-semibold text-foreground mb-1">To promote land stewardship</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   When you track your land over years, you start to see patterns. You make better decisions.
                   You become a better steward. Giving people the right tools leads to healthier land, healthier
@@ -107,7 +129,7 @@ export default function AboutPage() {
       {/* How I Use It */}
       <section className="py-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">How I Use Yona</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">How I use Yona</h2>
           <div className="bg-card border border-border rounded-xl p-6 space-y-4">
             <p className="text-muted-foreground leading-relaxed">
               Every time I&apos;m on the property, I log what I see — deer activity, turkey scratching,
@@ -155,7 +177,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-3">Ready to Better Manage Your Land?</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-3">Ready to jump in?</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Join thousands of hunters, landowners, and conservationists who are building a legacy of responsible stewardship.
           </p>

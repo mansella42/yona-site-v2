@@ -68,11 +68,11 @@ export function AppPreview() {
           {/* Browser Frame */}
           <div className="bg-card rounded-xl shadow-xl overflow-hidden border border-border">
             {/* Browser Header */}
-            <div className="bg-muted px-4 py-2 flex items-center gap-2 border-b border-border">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
-                <div className="w-2.5 h-2.5 rounded-full bg-accent" />
-                <div className="w-2.5 h-2.5 rounded-full bg-primary/60" />
+            <div className="relative z-10 shrink-0 bg-muted px-4 py-3 flex items-center gap-2 border-b border-border">
+              <div className="flex gap-1.5" aria-hidden>
+                <div className="w-3 h-3 rounded-full bg-destructive/70" />
+                <div className="w-3 h-3 rounded-full bg-accent" />
+                <div className="w-3 h-3 rounded-full bg-primary/70" />
               </div>
               <div className="flex-1 mx-4">
                 <div className="bg-background rounded-md px-4 py-1 text-xs text-muted-foreground max-w-md mx-auto text-center">
@@ -81,19 +81,17 @@ export function AppPreview() {
               </div>
             </div>
             
-            {/* Screenshot */}
-            <div className="relative aspect-[16/9] bg-muted">
+            {/* Screenshot — JPG is app UI only; browser chrome is the header above */}
+            <div className="relative z-0 aspect-[2/1] w-full overflow-hidden bg-muted">
               {activeScreenshot && (
                 <Image
                   src={activeScreenshot.src}
                   alt={activeScreenshot.alt}
                   fill
-                  className="object-cover object-top"
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  className="object-contain object-top"
                 />
               )}
-              <div className="absolute bottom-3 right-3 bg-background/90 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-muted-foreground border border-border">
-                Replace with your app screenshots
-              </div>
             </div>
           </div>
 

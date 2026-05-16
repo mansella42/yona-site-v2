@@ -2,22 +2,59 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Leaf } from "lucide-react"
 import { AnimatedStat } from "./animated-stat"
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const syncMotionPreference = () => {
+      const video = videoRef.current
+      if (!video) return
+
+      if (media.matches) {
+        video.pause()
+        video.style.visibility = "hidden"
+      } else {
+        video.style.visibility = "visible"
+        void video.play().catch(() => {})
+      }
+    }
+
+    syncMotionPreference()
+    media.addEventListener("change", syncMotionPreference)
+    return () => media.removeEventListener("change", syncMotionPreference)
+  }, [])
+
   return (
     <section className="relative min-h-[80vh] flex items-center pt-16">
-      {/* Background Image */}
+      {/* Background video (still image fallback underneath) */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-wildlife.jpg"
-          alt="Deer in misty forest at sunrise"
+          alt=""
           fill
           className="object-cover"
           priority
+          aria-hidden
         />
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero-wildlife.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden
+        >
+          <source src="/images/hero-wildlife.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
       </div>
 
@@ -27,13 +64,13 @@ export function Hero() {
           <div className="flex items-center gap-2 mb-4">
             <Leaf className="h-5 w-5 text-primary" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              Stewardship Made Simple
+              Love the land
             </span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-            Manage Your Land.{" "}
-            <span className="text-primary">Protect Your Wildlife.</span>
+            Manage your land.{" "}
+            <span className="text-primary">Preserve your way of life.</span>
           </h1>
           
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-xl">

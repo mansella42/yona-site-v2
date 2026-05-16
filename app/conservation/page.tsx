@@ -263,7 +263,7 @@ export default function ConservationPage() {
       {/* CTA */}
       <section className="py-10 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground">Ready to Make a Difference?</h2>
+          <h2 className="text-2xl font-bold text-foreground">Ready to strengthen the southern land community?</h2>
           <p className="mt-2 text-muted-foreground">Join Yona and put your subscription to work for conservation.</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">

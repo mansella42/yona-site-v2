@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 import { CheckCircle2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedStat } from "./animated-stat"
@@ -23,6 +24,29 @@ const stats = [
 ]
 
 export function Conservation() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const syncMotionPreference = () => {
+      const video = videoRef.current
+      if (!video) return
+
+      if (media.matches) {
+        video.pause()
+        video.style.visibility = "hidden"
+      } else {
+        video.style.visibility = "visible"
+        void video.play().catch(() => {})
+      }
+    }
+
+    syncMotionPreference()
+    media.addEventListener("change", syncMotionPreference)
+    return () => media.removeEventListener("change", syncMotionPreference)
+  }, [])
+
   return (
     <section id="conservation" className="py-10 bg-primary text-primary-foreground scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -71,7 +95,7 @@ export function Conservation() {
             </div>
           </div>
 
-          {/* Image Side */}
+          {/* Media side — video with JPG fallback inside rounded container */}
           <div className="relative">
             <div className="relative h-[300px] rounded-xl overflow-hidden">
               <Image
@@ -79,14 +103,27 @@ export function Conservation() {
                 alt="Sustainable managed forest"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              <video
+                ref={videoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/images/forest-conservation.jpg"
+                className="absolute inset-0 h-full w-full object-cover"
+                aria-hidden
+              >
+                <source src="/images/forest-conservation.mp4" type="video/mp4" />
+              </video>
             </div>
             <div className="absolute -bottom-3 -left-3 bg-card text-card-foreground p-4 rounded-lg shadow-lg max-w-xs">
               <p className="text-xs font-medium">
-                &ldquo;Yona has transformed how we document our conservation work. The data speaks for itself.&rdquo;
+                &ldquo;Yona has helped us optimize habitat connectivity for the pileated woodpecker in Alabama.&rdquo;
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                — Sarah M., Land Trust Director
+                — Alex M., Indian Hen Preservation Society of Alabama
               </p>
             </div>
           </div>

@@ -19,7 +19,7 @@ export function CTA() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="bg-card border border-border rounded-2xl p-6 md:p-10 text-center shadow-lg">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-balance">
-            Ready to Become a Better Land Steward?
+            Ready to join ol' Yona bear ᏲᎾ?
           </h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             Join Southern hunting clubs, landowners, and conservationists who trust 

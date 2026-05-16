@@ -65,7 +65,7 @@ export function Pricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-balance">
-            Simple, Transparent Pricing
+            Simple, transparent pricing
           </h2>
           <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
             Start free and scale as you grow. No hidden fees, no surprises.
