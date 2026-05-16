@@ -1,0 +1,7 @@
+# Netlify + Next.js (OpenNext runtime). In the Netlify UI, set “Base directory” to
+# `yona-site-2` when this folder lives inside a larger repo.
+[build]
+  command = "pnpm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
